@@ -1,6 +1,6 @@
 ---
 title: Life.
-date: 2021/3/19
+date: 2023/2/9
 description: Let's take a step back and have an abstract view on life as a whole.
 tag: general
 author: Alihan Ekiz
