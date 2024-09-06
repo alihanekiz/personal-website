@@ -68,4 +68,6 @@ img.next-image {
   border-radius: 50px;
   margin-left: 0;
   margin-right: 0;
+  height: 100px;
+  object-fit: cover;
 }
