@@ -1,6 +1,6 @@
 ---
 title: Why AI Makes Hard Money Inevitable
-date: 2026/1/8
+date: 2026/1/7
 description: Technology is structurally deflationary while monetary systems require inflation. This collision course makes hard money like gold and bitcoin increasingly relevant.
 tag: AI,economics,bitcoin,gold,money,inflation,deflation
 author: Alihan Ekiz
