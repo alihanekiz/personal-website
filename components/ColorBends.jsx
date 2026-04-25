@@ -188,21 +188,31 @@ export default function ColorBends({
 
     const clock = new THREE.Clock()
 
+    const getLockedSize = () => {
+      const screenW = (window.screen && window.screen.width) || window.innerWidth
+      const screenH = (window.screen && window.screen.height) || window.innerHeight
+      const w = Math.max(window.innerWidth, screenW) || 1
+      const h = Math.max(window.innerHeight, screenH) || 1
+      return { w, h }
+    }
+
+    let lastSize = { w: 0, h: 0 }
     const handleResize = () => {
-      const w = container.clientWidth || 1
-      const h = container.clientHeight || 1
+      const { w, h } = getLockedSize()
+      if (w === lastSize.w && h === lastSize.h) return
+      lastSize = { w, h }
       renderer.setSize(w, h, false)
       material.uniforms.uCanvas.value.set(w, h)
     }
 
     handleResize()
 
-    if ('ResizeObserver' in window) {
-      const ro = new ResizeObserver(handleResize)
-      ro.observe(container)
-      resizeObserverRef.current = ro
-    } else {
-      window.addEventListener('resize', handleResize)
+    const handleOrientation = () => {
+      setTimeout(handleResize, 150)
+    }
+    window.addEventListener('orientationchange', handleOrientation)
+    resizeObserverRef.current = {
+      disconnect: () => window.removeEventListener('orientationchange', handleOrientation),
     }
 
     const loop = () => {
