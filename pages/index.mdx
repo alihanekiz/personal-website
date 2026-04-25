@@ -4,10 +4,25 @@ title: About
 date: 2025-12-31
 ---
 
-# Alihan Ekiz
-
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import { KeyBlock } from "../components/KeyBlock";
+
+export const ColorBends = dynamic(() => import("../components/ColorBends"), { ssr: false });
+
+<ColorBends
+  className="page-bg"
+  colors={["#f0f0f0", "#888888", "#222222", "#000000"]}
+  speed={0.08}
+  noise={0.45}
+  intensity={1.4}
+  bandWidth={5}
+  warpStrength={0.9}
+  mouseInfluence={0}
+  parallax={0}
+/>
+
+# Alihan Ekiz
 
 <Image
   src="/images/profile.jpg"
