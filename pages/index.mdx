@@ -7,6 +7,7 @@ date: 2025-12-31
 # Alihan Ekiz
 
 import Image from "next/image";
+import { KeyBlock } from "../components/KeyBlock";
 
 <Image
   src="/images/profile.jpg"
@@ -33,4 +34,15 @@ GitHub [@alihanekiz](https://github.com/alihanekiz)
 
 Email alihan.ekiz@outlook.de
 
-For encrypted communication: [B627 35D5 FAB4 5357 D1D9 96A2 C38E 0D70 8BC9 050F](/key/pub.asc)
+<KeyBlock
+  label="PGP"
+  icon="pgp"
+  href="/key/pub.asc"
+  value="B627 35D5 FAB4 5357 D1D9 96A2 C38E 0D70 8BC9 050F"
+/>
+
+<KeyBlock
+  label="BTC"
+  icon="bitcoin"
+  value="bc1qe2zewusry3dk2u6cj77xcs75yvmzcgl9kwga54"
+/>
